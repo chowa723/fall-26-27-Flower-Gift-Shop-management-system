@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Customer Dashboard | Petal &amp; Co</title>
+ <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../">
+ <header class="topbar">
+  <h1>Petal &amp; Co <span class="role">Customer</span></h1>
+  <div><span id="who"></span> <button id="logoutBtn" class="btn small ghost" type="button">Logout</button></div>
+ </header>
+ <div class="layout">
+  <nav class="sidebar">
+   <button type="button" data-section="shop">Shop</button>
+   <button type="button" data-section="cart">Cart (<span id="cartCount">0</span>)</button>
+   <button type="button" data-section="orders">My orders</button>
+   <button type="button" data-section="wishlist">Wishlist</button>
+   <button type="button" data-section="reviews">Reviews</button>
+  </nav>
+  <main class="content">
+   <section class="panel" id="sec-shop">
+    <h2>Shop flowers</h2>
+    <div class="toolbar">
+     <input type="text" id="searchFlower" placeholder="Search by flower or category" aria-label="Search flowers">
+     <select id="filterCat" aria-label="Filter by category"></select>
+    </div>
+    <p class="muted" id="shopCount"></p>
+    <div id="flowerGrid" class="grid"></div>
+   </section>
+
+   <section class="panel hidden" id="sec-cart">
+    <h2>Your cart</h2>
+    <div id="cartBox"></div>
+    <div id="cartSummary"></div>
+    <form id="checkoutForm" class="panelbox" novalidate>
+     <label for="address">Delivery address</label>
+     <textarea id="address" rows="3"></textarea><span class="error" id="addressErr"></span>
+     <p><button type="submit" class="btn">Place order (cash on delivery)</button></p>
+    </form>
+   </section>
+
+   <section class="panel hidden" id="sec-orders">
+    <h2>My orders</h2>
+    <div id="orderBox"></div>
+    <div id="editBox" class="panelbox hidden">
+     <label for="editAddress">Update delivery address</label>
+     <textarea id="editAddress" rows="3"></textarea><span class="error" id="editErr"></span>
+     <button type="button" class="btn small" id="editSave">Save address</button>
+     <button type="button" class="btn small ghost" id="editCancel">Cancel</button>
+    </div>
+   </section>
+
+   <section class="panel hidden" id="sec-wishlist">
+    <h2>Wishlist</h2>
+    <div id="wishBox" class="grid"></div>
+   </section>
+
+   <section class="panel hidden" id="sec-reviews">
+    <h2>Rate a flower</h2>
+    <p class="muted">You can review flowers from orders that were delivered.</p>
+    <form id="reviewForm" class="panelbox" novalidate>
+     <label for="reviewFlower">Flower</label>
+     <select id="reviewFlower"></select><span class="error" id="reviewFlowerErr"></span>
+     <label for="reviewRating">Rating</label>
+     <select id="reviewRating">
+      <option value="">-- Select --</option><option value="5">5 - Excellent</option><option value="4">4 - Good</option>
+      <option value="3">3 - Okay</option><option value="2">2 - Poor</option><option value="1">1 - Bad</option>
+     </select><span class="error" id="ratingErr"></span>
+     <label for="reviewText">Comment</label>
+     <textarea id="reviewText" rows="3"></textarea><span class="error" id="reviewTextErr"></span>
+     <p><button type="submit" class="btn">Save review</button></p>
+    </form>
+    <h2 style="margin-top: 20px">My reviews</h2>
+    <div id="reviewBox"></div>
+   </section>
+  </main>
+ </div>
+ <script src="../js/data.js"></script>
+ <script src="../js/storage.js"></script>
+ <script src="../js/validation.js"></script>
+ <script src="customer.js"></script>
+</body>
+</html>
