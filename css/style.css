@@ -99,3 +99,201 @@ tr:nth-child(even) td { background: #FCF3F0; }
 }
 .pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero img { width: 320px; max-width: 100%; height: auto; border-radius: 12px; }
+/* SELLER DASHBOARD */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    
+}
+
+.header .logo {
+    font-size: 2.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.header .logo span {
+    color: #C9A7F5;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+#who {
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(197, 103, 103);
+}
+
+.btn-light {
+    padding: 8px 20px;
+    border-radius: 6px;
+}
+
+.topnav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 8px 0;
+}
+
+.topnav button {
+    padding: 13px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.card {
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#sellerStats {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+#sellerStats .stat-card {
+    flex: 1;
+    max-width: 350px;
+    text-align: center;
+    padding: 22px;
+}
+
+#sellerStats .stat-number {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+#sellerStats .stat-label {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: .92rem;
+}
+
+.data-table th {
+    background-color: #663399;
+    color: white;
+    padding: 14px 10px;
+    text-align: center;
+}
+
+.data-table td {
+    padding: 13px 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #EEEAF5;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #F8F6FC;
+}
+
+.data-table tr:hover {
+    background-color: #EEEAF5;
+}
+
+.data-table td .btn {
+    margin: 3px;
+}
+
+#formTitle {
+    text-align: center;
+}
+
+.form-table {
+    width: 100%;
+}
+
+.form-table td {
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.form-table td:first-child {
+    text-align: right;
+}
+
+#flowerForm > p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer {
+    text-align: center;
+}S
+
+@media(max-width:768px) {
+    .header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .header .logo {
+        font-size: 2rem;
+    }
+
+    .user-info {
+        align-items: center;
+    }
+
+    .topnav {
+        gap: 8px;
+    }
+
+    .topnav button {
+        padding: 12px 16px;
+    }
+
+    #sellerStats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sellerStats .stat-card {
+        width: 100%;
+    }
+
+    .form-table td:first-child {
+        text-align: left;
+    }
+}
