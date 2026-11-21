@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Admin Dashboard | Petal &amp; Co</title>
+ <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../">
+ <header class="topbar">
+  <h1>Petal &amp; Co <span class="role">Admin</span></h1>
+  <div><span id="who"></span> <button id="logoutBtn" class="btn small ghost" type="button">Logout</button></div>
+ </header>
+ <div class="layout">
+  <nav class="sidebar">
+   <button type="button" data-section="overview">Sales summary</button>
+   <button type="button" data-section="users">Users</button>
+   <button type="button" data-section="categories">Categories</button>
+   <button type="button" data-section="orders">Orders and riders</button>
+  </nav>
+  <main class="content">
+   <section class="panel" id="sec-overview">
+    <h2>Sales summary</h2>
+    <div id="summaryStats" class="stats"></div>
+    <h3>Orders by status</h3>
+    <div id="statusBox"></div>
+   </section>
+
+   <section class="panel hidden" id="sec-users">
+    <h2>Users</h2>
+    <div class="toolbar">
+     <input type="text" id="searchUser" placeholder="Search by name or email" aria-label="Search users">
+    </div>
+    <p class="muted" id="userCount"></p>
+    <div id="userBox"></div>
+   </section>
+
+   <section class="panel hidden" id="sec-categories">
+    <h2>Categories</h2>
+    <form id="catForm" class="panelbox" novalidate>
+     <input type="hidden" id="catId">
+     <label for="catName">Category name</label>
+     <input type="text" id="catName"><span class="error" id="catNameErr"></span>
+     <p><button type="submit" class="btn" id="catSave">Add category</button>
+     <button type="button" class="btn ghost" id="catCancel">Clear</button></p>
+    </form>
+    <div id="catBox" style="margin-top: 16px"></div>
+   </section>
+
+   <section class="panel hidden" id="sec-orders">
+    <h2>Orders and riders</h2>
+    <div class="toolbar">
+     <select id="orderFilter" aria-label="Filter orders by status">
+      <option value="">All statuses</option><option>Pending</option><option>Assigned</option>
+      <option>Accepted</option><option>Out for delivery</option><option>Delivered</option>
+     </select>
+    </div>
+    <div id="orderBox"></div>
+   </section>
+  </main>
+ </div>
+ <script src="../js/data.js"></script>
+ <script src="../js/storage.js"></script>
+ <script src="../js/validation.js"></script>
+ <script src="admin.js"></script>
+</body>
+</html>

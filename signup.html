@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Sign up | Petal &amp; Co</title>
+ <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ <header class="topbar">
+  <h1>Petal &amp; Co</h1>
+  <nav><a href="index.html">Home</a><a href="login.html">Login</a><a href="signup.html">Sign up</a></nav>
+ </header>
+ <main class="formbox">
+  <h2>Create your account</h2>
+  <form id="signupForm" novalidate>
+   <label for="name">Full name</label>
+   <input type="text" id="name"><span class="error" id="nameErr"></span>
+   <label for="email">Email</label>
+   <input type="email" id="email"><span class="error" id="emailErr"></span>
+   <label for="phone">Phone</label>
+   <input type="tel" id="phone" placeholder="01XXXXXXXXX"><span class="error" id="phoneErr"></span>
+   <label for="role">I am a</label>
+   <select id="role">
+    <option value="">-- Select --</option>
+    <option value="customer">Customer</option>
+    <option value="seller">Seller</option>
+    <option value="delivery">Delivery man</option>
+   </select><span class="error" id="roleErr"></span>
+   <label for="password">Password</label>
+   <input type="password" id="password"><span class="error" id="passErr"></span>
+   <label for="confirmPass">Confirm password</label>
+   <input type="password" id="confirmPass"><span class="error" id="confirmErr"></span>
+   <p style="margin-top: 14px"><button type="submit" class="btn">Create account</button> <button type="reset" class="btn ghost">Reset</button></p>
+  </form>
+  <div id="formMsg" class="notice" role="status"></div>
+  <p>Already registered? <a href="login.html">Log in</a></p>
+ </main>
+ <script src="js/data.js"></script>
+ <script src="js/storage.js"></script>
+ <script src="js/validation.js"></script>
+ <script src="js/auth.js"></script>
+</body>
+</html>
