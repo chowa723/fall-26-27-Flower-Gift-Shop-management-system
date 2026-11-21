@@ -5,8 +5,9 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Customer Dashboard | Petal &amp; Co</title>
  <link rel="stylesheet" href="../css/style.css">
+ <link rel="stylesheet" href="customer.css">
 </head>
-<body data-root="../">
+<body data-root="../" class="customer-page">
  <header class="topbar">
   <h1>Petal &amp; Co <span class="role">Customer</span></h1>
   <div><span id="who"></span> <button id="logoutBtn" class="btn small ghost" type="button">Logout</button></div>
@@ -21,6 +22,7 @@
   </nav>
   <main class="content">
    <section class="panel" id="sec-shop">
+    <div id="welcome" class="welcome"></div>
     <h2>Shop flowers</h2>
     <div class="toolbar">
      <input type="text" id="searchFlower" placeholder="Search by flower or category" aria-label="Search flowers">
@@ -32,6 +34,7 @@
 
    <section class="panel hidden" id="sec-cart">
     <h2>Your cart</h2>
+    <p class="sub">Check your flowers, then add an address to order.</p>
     <div id="cartBox"></div>
     <div id="cartSummary"></div>
     <form id="checkoutForm" class="panelbox" novalidate>
@@ -43,6 +46,7 @@
 
    <section class="panel hidden" id="sec-orders">
     <h2>My orders</h2>
+    <p class="sub">Pending orders can still be edited or cancelled.</p>
     <div id="orderBox"></div>
     <div id="editBox" class="panelbox hidden">
      <label for="editAddress">Update delivery address</label>
@@ -54,6 +58,7 @@
 
    <section class="panel hidden" id="sec-wishlist">
     <h2>Wishlist</h2>
+    <p class="sub">Flowers you saved for later.</p>
     <div id="wishBox" class="grid"></div>
    </section>
 

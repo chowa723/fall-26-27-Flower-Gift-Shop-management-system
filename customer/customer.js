@@ -21,6 +21,24 @@ function init() {
 }
 function renderAll() { renderShop(); renderCart(); renderOrders(); renderWishlist(); renderReviews(); }
 
+// ---------- Welcome banner ----------
+function renderWelcome() {
+  const hour = new Date().getHours();
+  const greet = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
+  let inCart = 0;
+  getCart().forEach(function (c) { inCart += c.qty; });
+  const box = $("welcome"); box.innerHTML = "";
+  const text = el("div");
+  text.appendChild(el("h2", greet + ", " + me.name.split(" ")[0]));
+  text.appendChild(el("p", "Pick a bouquet and we will deliver it fresh.", "sub"));
+  box.appendChild(text);
+  const chips = el("div", "", "chips");
+  chips.appendChild(stat("In cart", inCart));
+  chips.appendChild(stat("My orders", myOrders().length));
+  chips.appendChild(stat("Wishlist", wishlist().length));
+  box.appendChild(chips);
+}
+
 // ---------- Shop (Read + Search) ----------
 function renderShop() {
   const text = $("searchFlower").value.trim().toLowerCase();
@@ -76,6 +94,7 @@ function renderCart() {
     sum.appendChild(el("h3", "Total: " + money(subtotal + vat)));
   }
   $("cartCount").textContent = count;
+  renderWelcome();
 }
 
 // ---------- Orders (Create, Read, Update, Delete) ----------
@@ -110,6 +129,7 @@ function renderOrders() {
     return ["#" + o.id, itemsText(o), money(o.total), o.address, orderBadge(o.status), o.riderId ? userName(o.riderId) : "-", acts];
   });
   fill("orderBox", buildTable(["Order", "Items", "Total", "Address", "Status", "Rider", "Actions"], rows, "You have not placed an order yet."));
+  renderWelcome();
 }
 function startEdit(o) { editingId = o.id; $("editAddress").value = o.address; $("editErr").textContent = ""; $("editBox").classList.remove("hidden"); }
 function saveAddress() {
@@ -144,6 +164,7 @@ function toggleWish(fid) {
 function renderWishlist() {
   const box = $("wishBox"); box.innerHTML = "";
   const list = allFlowers().filter(function (f) { return wishlist().indexOf(f.id) !== -1; });
+  renderWelcome();
   if (list.length === 0) { box.appendChild(el("p", "Your wishlist is empty.", "empty")); return; }
   list.forEach(function (f) {
     box.appendChild(flowerCard(f, [btn("Add to cart", function () { addToCart(f); }), btn("Remove", function () { toggleWish(f.id); }, "btn small ghost")]));
