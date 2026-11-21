@@ -5,7 +5,7 @@ const LOW_STOCK = 5;
 const seedUsers = [
   { id: 1, name: "Site Admin", email: "admin@flower.com", phone: "01711000001", password: "admin123", role: "admin", status: "active", wishlist: [] },
   { id: 2, name: "Rahim Ahmed", email: "customer@flower.com", phone: "01711000002", password: "123456", role: "customer", status: "active", wishlist: [] },
-  { id: 3, name: "Nusrat Jahan", email: "seller@flower.com", phone: "01711000003", password: "123456", role: "seller", status: "active", wishlist: [] },
+  { id: 3, name: "Anika Afroz", email: "seller@flower.com", phone: "01711000003", password: "123456", role: "seller", status: "active", wishlist: [] },
   { id: 4, name: "Kamal Hossain", email: "rider@flower.com", phone: "01711000004", password: "123456", role: "delivery", status: "active", wishlist: [] }
 ];
 
