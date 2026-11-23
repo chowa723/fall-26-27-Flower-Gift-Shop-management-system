@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Delivery Dashboard | Petal &amp; Co</title>
+ <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../">
+ <header class="topbar">
+  <h1>Petal &amp; Co <span class="role">Delivery man</span></h1>
+  <div><span id="who"></span> <button id="logoutBtn" class="btn small ghost" type="button">Logout</button></div>
+ </header>
+ <div class="layout">
+  <nav class="sidebar">
+   <button type="button" data-section="tasks">My deliveries</button>
+   <button type="button" data-section="notes">Delivery notes</button>
+   <button type="button" data-section="history">History</button>
+  </nav>
+  <main class="content">
+   <section class="panel" id="sec-tasks">
+    <h2>My deliveries</h2>
+    <div id="riderStats" class="stats"></div>
+    <div class="toolbar">
+     <input type="text" id="searchTask" placeholder="Search by order id or area" aria-label="Search deliveries">
+    </div>
+    <p class="muted" id="taskCount"></p>
+    <div id="taskBox"></div>
+   </section>
+   <section class="panel hidden" id="sec-notes">
+    <h2>Delivery notes</h2>
+    <form id="noteForm" class="panelbox" novalidate>
+     <label for="noteOrder">Order</label>
+     <select id="noteOrder"></select><span class="error" id="noteOrderErr"></span>
+     <label for="noteText">Note</label>
+     <textarea id="noteText" rows="3" placeholder="Example: Call before arriving"></textarea><span class="error" id="noteTextErr"></span>
+     <p><button type="submit" class="btn">Add note</button></p>
+    </form>
+    <div id="noteBox" style="margin-top: 16px"></div>
+   </section>
+   <section class="panel hidden" id="sec-history">
+    <h2>Delivery history</h2>
+    <p id="doneCount" class="muted"></p>
+    <div id="historyBox"></div>
+   </section>
+  </main>
+ </div>
+ <script src="../js/data.js"></script>
+ <script src="../js/storage.js"></script>
+ <script src="../js/validation.js"></script>
+ <script src="delivery.js"></script>
+</body>
+</html>
