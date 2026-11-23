@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-root="../">
-
+    
     <!-- HEADER -->
     <header class="header">
         <a href="../index.html" class="logo">Petal <span>&amp; Co</span></a>
-
         <div class="user-info">
             <span class="badge seller">Seller</span>
             <span id="who">Welcome, Seller</span>
@@ -21,118 +20,65 @@
             </button>
         </div>
     </header>
-
-
+    
     <!-- NAVIGATION -->
      <h2 class="page-title">My Flowers</h2>
     <nav class="topnav">
         <button type="button" data-section="stock">My Flowers</button>
         <button type="button" data-section="form">Add / Edit Flower</button>
     </nav>
-
-
     <main class="container">
-
-        <!-- =========================================
-             MANAGE FLOWERS: CRUD AND SEARCH
-             ========================================= -->
-
         <section id="sec-stock" class="page-section">
-
-            <!--<h2 class="page-title">My Flowers</h2>-->
-
-            <p class="page-subtitle">
-                <!--Add new flowers, update their details, remove flowers and search your flower collection.-->
-            </p>
-
+            <p class="page-subtitle"></p>
             <div id="sellerStats" class="stats"></div>
-
             <div class="card">
-
                 <h3>Flower Catalogue</h3>
-
                 <div class="search-bar">
-
                     <input type="text"
                            id="searchStock"
                            placeholder="Search by flower name..."
                            aria-label="Search flowers">
-
                     <label>
                         <input type="checkbox" id="onlyLow">
                         Low stock only
                     </label>
-
                 </div>
-
                 <p class="result-count" id="stockCount"></p>
-
-                <div class="table-wrapper" id="stockBox">
-                    <!-- Flower table will be created by JavaScript -->
-                </div>
-
+                <div class="table-wrapper" id="stockBox"> </div>
             </div>
-
         </section>
-
-
-        <!-- =========================================
-             ADD AND EDIT FLOWERS
-             ========================================= -->
-
         <section id="sec-form" class="page-section hidden">
-
             <h2 class="page-title">Manage Flower Details</h2>
-
             <p class="page-subtitle">
-                Enter flower information to add a new flower
-                or update an existing flower.
+                Enter flower information to add a new flower or update an existing flower.
             </p>
-
             <div class="card">
-
                 <h3 id="formTitle">Add a Flower</h3>
-
                 <form id="flowerForm" novalidate>
-
                     <input type="hidden" id="fId">
-
                     <fieldset>
-
                         <legend>Flower Details</legend>
-
                         <table class="form-table">
-
                             <tr>
                                 <td>
                                     <label for="fName">Flower Name:</label>
                                 </td>
-
                                 <td>
                                     <input type="text"
                                            id="fName"
                                            placeholder="Enter flower name">
-
                                     <span class="error" id="fNameErr"></span>
                                 </td>
                             </tr>
-
-
                             <tr>
                                 <td>
                                     <label for="fCat">Category:</label>
                                 </td>
-
                                 <td>
-                                    <select id="fCat">
-                                        <!-- Options will be added by JavaScript -->
-                                    </select>
-
+                                    <select id="fCat"></select>
                                     <span class="error" id="fCatErr"></span>
                                 </td>
                             </tr>
-
-
                             <tr>
                                 <td>
                                     <label for="fPrice">Price (Tk):</label>
@@ -143,135 +89,85 @@
                                            id="fPrice"
                                            min="1"
                                            placeholder="Enter price">
-
                                     <span class="error" id="fPriceErr"></span>
                                 </td>
                             </tr>
-
-
                             <tr>
                                 <td>
                                     <label for="fDiscount">Discount Price (Tk):</label>
                                 </td>
-
                                 <td>
                                     <input type="number"
                                            id="fDiscount"
                                            min="0"
                                            placeholder="Optional">
-
                                     <span class="error" id="fDiscountErr"></span>
                                 </td>
                             </tr>
-
-
                             <tr>
                                 <td>
                                     <label for="fStock">Available Stock:</label>
                                 </td>
-
                                 <td>
                                     <input type="number"
                                            id="fStock"
                                            min="0"
                                            placeholder="Enter stock quantity">
-
                                     <span class="error" id="fStockErr"></span>
                                 </td>
                             </tr>
-
-
                             <tr>
                                 <td>
                                     <label for="fImage">Flower Picture:</label>
                                 </td>
-
                                 <td>
                                     <select id="fImage">
-
                                         <option value="">No picture</option>
-
-                                        <option value="images/rose-red.svg">
-                                            Red Rose
-                                        </option>
-
-                                        <option value="images/rose-pink.svg">
-                                            Pink Rose
-                                        </option>
-
-                                        <option value="images/lily.svg">
-                                            Lily
-                                        </option>
-
-                                        <option value="images/orchid.svg">
-                                            Orchid
-                                        </option>
-
-                                        <option value="images/sunflower.svg">
-                                            Sunflower
-                                        </option>
-
-                                        <option value="images/tulip.svg">
-                                            Tulip
-                                        </option>
-
+                                        <option value="images/rose-red.svg"> Red Rose </option>
+                                        <option value="images/rose-pink.svg"> Pink Rose </option>
+                                        <option value="images/lily.svg"> Lily</option>
+                                        <option value="images/orchid.svg"> Orchid </option>
+                                        <option value="images/sunflower.svg"> Sunflower </option>
+                                        <option value="images/tulip.svg">Tulip </option>
                                     </select>
                                 </td>
                             </tr>
-
-
                             <tr>
                                 <td>
                                     <label for="fColor">Card Colour:</label>
                                 </td>
-
                                 <td>
                                     <input type="color"
                                            id="fColor"
                                            value="#C0394F">
                                 </td>
                             </tr>
-
                         </table>
-
                     </fieldset>
-
-
                     <p>
                         <input type="submit"
                                id="saveBtn"
                                class="btn"
                                value="Save Flower">
-
                         <button type="button"
                                 id="cancelEdit"
                                 class="btn btn-secondary">
                             Clear Form
                         </button>
                     </p>
-
                 </form>
-
             </div>
-
         </section>
-
-
     </main>
-
-
     <!-- FOOTER -->
     <footer class="footer">
         &copy; 2026 Petal &amp; Co Flower Shop
         &middot; CSC 3215 Web Technologies
     </footer>
-
-
     <!-- JAVASCRIPT FILES -->
     <script src="../js/data.js"></script>
     <script src="../js/storage.js"></script>
     <script src="../js/validation.js"></script>
     <script src="seller.js"></script>
-
 </body>
 </html>
