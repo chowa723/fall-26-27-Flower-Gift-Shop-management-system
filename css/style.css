@@ -262,12 +262,6 @@ tr:nth-child(even) td { background: #FCF3F0; }
     text-align: center;
 }S
 
-@media(max-width:768px) {
-    .header {
-        flex-direction: column;
-        gap: 18px;
-    }
-
     .header .logo {
         font-size: 2rem;
     }
